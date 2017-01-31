@@ -112,9 +112,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(pickController, animated: true, completion: nil)
     }
     
+    @IBAction func shareBtnPressed(_ sender: UIBarButtonItem) {
+        
+        let activityVC = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
+        
+        activityVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityVC, animated: true, completion: save)
+    }
     func save() {
         // Create the meme
         let meme = Meme(textTop: textTop.text!, textBottom: textBottom.text!, originalImage: imageView.image!, memed: generateMemedImage())
+        
+        
     }
     
     

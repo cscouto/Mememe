@@ -82,7 +82,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ls2-0N-1S0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Sip-aN-47J"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Sip-aN-47J">
+                            <connections>
+                                <action selector="shareBtnPressed:" destination="BYZ-38-t0r" id="lro-BA-ugQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="camBtn" destination="AM4-ry-bxz" id="CM4-TN-Y7J"/>
