@@ -112,6 +112,7 @@ class MemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         activityVC.popoverPresentationController?.sourceView = self.view
         
         self.present(activityVC, animated: true, completion: save)
+        
     }
     func save() {
         // Create the meme
@@ -119,6 +120,7 @@ class MemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
+        
     }
     
     
