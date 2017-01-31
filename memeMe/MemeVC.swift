@@ -8,14 +8,7 @@
 
 import UIKit
 
-struct Meme{
-    var textTop:String?
-    var textBottom:String?
-    var originalImage: UIImage!
-    var memed: UIImage!
-}
-
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var textTop: UITextField!
     @IBOutlet weak var textBottom: UITextField!
 
@@ -124,7 +117,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Create the meme
         let meme = Meme(textTop: textTop.text!, textBottom: textBottom.text!, originalImage: imageView.image!, memed: generateMemedImage())
         
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     
