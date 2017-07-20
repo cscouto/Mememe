@@ -26,19 +26,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="-" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UTd-BY-oXx">
-                                <rect key="frame" x="16" y="72" width="343" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="-" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="EPU-sp-GV9">
+                                <rect key="frame" x="16" y="575" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Mym-Hs-JwM"/>
+                                    <constraint firstAttribute="height" constant="40" id="uGV-ss-KSc"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="-" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="EPU-sp-GV9">
-                                <rect key="frame" x="16" y="575" width="343" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="-" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UTd-BY-oXx">
+                                <rect key="frame" x="16" y="72" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="uGV-ss-KSc"/>
+                                    <constraint firstAttribute="height" constant="40" id="Mym-Hs-JwM"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
@@ -287,6 +287,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HS4-0K-7wF"/>
+        <segue reference="rm2-J4-jRt"/>
     </inferredMetricsTieBreakers>
 </document>
