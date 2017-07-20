@@ -75,6 +75,9 @@ class MemeVC: UIViewController {
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: save)
     }
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
     
     //custom functions

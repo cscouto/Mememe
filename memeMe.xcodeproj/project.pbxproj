@@ -16,6 +16,7 @@
 		8CD192FF1E40B33C00231DD4 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD192FE1E40B33C00231DD4 /* TableVC.swift */; };
 		8CD193011E40B5F700231DD4 /* GridVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD193001E40B5F700231DD4 /* GridVC.swift */; };
 		8CD193031E40B93300231DD4 /* MemeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD193021E40B93300231DD4 /* MemeListCell.swift */; };
+		F75F94501F21198900BFEAAB /* MemeGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75F944F1F21198900BFEAAB /* MemeGridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8CD192FE1E40B33C00231DD4 /* TableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		8CD193001E40B5F700231DD4 /* GridVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridVC.swift; sourceTree = "<group>"; };
 		8CD193021E40B93300231DD4 /* MemeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeListCell.swift; sourceTree = "<group>"; };
+		F75F944F1F21198900BFEAAB /* MemeGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeGridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				8C2F5BCA1E3A2F83004968BE /* Main.storyboard */,
 				8CD193021E40B93300231DD4 /* MemeListCell.swift */,
+				F75F944F1F21198900BFEAAB /* MemeGridCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				8CD192FD1E40B2DE00231DD4 /* Meme.swift in Sources */,
 				8C2F5BC91E3A2F83004968BE /* MemeVC.swift in Sources */,
+				F75F94501F21198900BFEAAB /* MemeGridCell.swift in Sources */,
 				8CD192FF1E40B33C00231DD4 /* TableVC.swift in Sources */,
 				8CD193031E40B93300231DD4 /* MemeListCell.swift in Sources */,
 				8CD193011E40B5F700231DD4 /* GridVC.swift in Sources */,
