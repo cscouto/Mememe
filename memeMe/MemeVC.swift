@@ -15,6 +15,8 @@ class MemeVC: UIViewController {
     @IBOutlet weak var textBottom: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var camBtn: UIBarButtonItem!
+    @IBOutlet var btnShare: UIBarButtonItem!
+    @IBOutlet var toolBar: UIToolbar!
     
     //life cycle functions
     override func viewDidLoad() {
@@ -27,15 +29,15 @@ class MemeVC: UIViewController {
         
         textTop.text = "TOP"
         textBottom.text = "BOTTOM"
+        btnShare.isEnabled = false
         
-        let memeTextAtrs: [String:Any] = [NSStrokeColorAttributeName: UIColor.black,
-                                          NSForegroundColorAttributeName: UIColor.white,
+       /* let memeTextAtrs: [String:Any] = [NSStrokeColorAttributeName: UIColor.black,
                                           NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
                                           NSStrokeWidthAttributeName: 2.0]
         
         
         textTop.defaultTextAttributes = memeTextAtrs
-        textBottom.defaultTextAttributes = memeTextAtrs
+        textBottom.defaultTextAttributes = memeTextAtrs*/
         
         textTop.textAlignment = NSTextAlignment.center
         textBottom.textAlignment = NSTextAlignment.center
@@ -66,6 +68,10 @@ class MemeVC: UIViewController {
     }
     @IBAction func shareBtnPressed(_ sender: UIBarButtonItem) {
         let activityVC = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
+        activityVC.completionWithItemsHandler = {
+            data in
+            self.navigationController?.popToRootViewController(animated: true)
+        }
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: save)
     }
@@ -92,9 +98,18 @@ class MemeVC: UIViewController {
     func keyboardWillHide(_ notification:Notification){
         view.frame.origin.y = 0
     }
+    func save() {
+        
+        // Create the meme
+        let meme = Meme(textTop: textTop.text!, textBottom: textBottom.text!, originalImage: imageView.image!, memed: generateMemedImage())
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+    }
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        toolBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden =  true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -102,7 +117,8 @@ class MemeVC: UIViewController {
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        toolBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden =  false
         
         return memedImage
     }
@@ -115,15 +131,17 @@ extension MemeVC : UITextFieldDelegate{
         textField.text = ""
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
         return true
     }
 }
 
 
-extension MemeVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension MemeVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageView.image = image
+            btnShare.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -131,13 +149,6 @@ extension MemeVC : UIImagePickerControllerDelegate, UINavigationControllerDelega
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    func save() {
-        // Create the meme
-        let meme = Meme(textTop: textTop.text!, textBottom: textBottom.text!, originalImage: imageView.image!, memed: generateMemedImage())
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme)
-        
-    }
+    
 }
 
